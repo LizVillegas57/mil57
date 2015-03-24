@@ -1,0 +1,1403 @@
+@import 'bootstrap.css';
+@import 'normalize.css';
+@import 'lightGallery.css';
+@import '_configuration';
+@import '_mixins';
+
+/* General Styles ======================================================================== */
+	html, body{
+	  padding: 0;
+	  margin: 0;
+	}
+	body{
+	  	@include background();
+	  	@include generalBody();  
+	  	position:relative;
+	  	h1{
+	  		margin:0;
+	  		padding:0;
+	  	}
+	  	a{
+	  		font-weight: 800;
+	  		color:$blueColor;
+	  		@include transition(all, 1s, ease);
+	  		&:focus, &:hover, &:active{
+	  			outline: none;
+	  			text-decoration: none;
+	  		}
+	  	}
+	  	nav{
+	  		&.custom{
+	  			background:$grayColor;
+	  			height: 75px;
+	  			border-width: 0;
+	  			.navbar-header{
+	  				margin: 0;
+	  			}
+	  			.navbar-brand{
+	  				height: auto;
+	  				margin: 0 !important;
+	  				padding: 14px 25px 0;
+	  				img{
+	  					width: 165px;
+	  				}
+	  			}
+	  			.container{
+	  				margin: 0;
+					padding: 0;
+					width: 100%;
+	  			}
+	  			.navbar-nav{
+	  				float: right;
+	  				li{
+	  					a{
+	  						line-height: 75px;
+							padding: 0 50px;
+							color: $whiteColor;
+							font-family: $exoType;
+							font-weight: 300;
+	  						&:focus, &:hover, &:active{
+		  						background:$blueColor;
+	  							color: $whiteColor;
+		  					}
+	  					}
+	  					&.active{
+	  						a{
+	  							background:$grayColor;
+		  						color: $whiteColor;
+		  						&:focus, &:hover, &:active{
+			  						background:$blueColor;
+		  							color: $whiteColor;
+			  					}
+		  					}
+	  					}
+	  				}
+	  			}
+	  		}
+	  	}
+	  	.hidden{
+	  		display: none;
+	  	}
+	  	.loader {
+		  	width: 40px;
+		  	height: 40px;
+		  	position: relative;
+		 	margin: 300px auto;
+		 	.bounce1, .bounce2 {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 50%;
+			  background-color: $blueColor;
+			  opacity: 0.6;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  -webkit-animation: bounce 2.0s infinite ease-in-out;
+			  animation: bounce 2.0s infinite ease-in-out;
+			}
+			.bounce2 {
+			  -webkit-animation-delay: -1.0s;
+			  animation-delay: -1.0s;
+			}
+		}
+	}
+/* End General Styles ======================================================================== */
+/* Slider Styles ======================================================================== */
+	.slider{
+		@include slider();  
+		.logo{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 250px;
+			height: 250px;
+			top: 0;
+			@include transition(all, 0.5s, ease);
+			img{
+				width: 100%;
+			}
+			&.active{
+				position: absolute;
+				top: 470px;
+			}
+		}
+		h1{
+			color: $whiteColor;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 50px;
+			font-weight: 700;
+			padding-top:340px;
+		}
+	}
+/* End Slider Styles ======================================================================== */
+/* Content Styles ======================================================================== */
+	.content{
+		padding:100px 0 20px;
+		p{
+			color: $blueColor;
+			text-align: center;
+			font-size: 16px;
+			opacity:0;
+			visibility: hidden;
+			padding:0 100px;
+			@include transition(all, 0.5s, ease);
+		}
+		&.active{
+			p{
+				opacity:1;
+				visibility: visible;
+			}
+		}
+		article{
+			padding:100px 0 50px;
+			opacity:0;
+			visibility: hidden;
+			@include transition(all, 0.5s, ease);
+			h1{
+				background: $whiteColor;
+				margin: 10px 0 50px;
+				text-align: center;
+				font-size: 28px;
+				text-transform: uppercase;
+				padding: 25px 0;
+				box-shadow: 0 8px 16px -8px darken($whiteColor, 50%);
+				font-family: $exoType;
+				@include transition(all, 1s, ease);
+			}
+			dl{
+				padding:0 100px;
+				dt{
+					float: left;
+					width: 50%;
+					text-align: center;
+					div{
+						@include circle();
+						@include transition(all, 2s, ease);
+						@include border-radius(50%);
+						@include box-shadow(0, 0, 4px, darken($whiteColor, 50%));
+						position:relative;
+						img{
+							position:absolute;
+							width: 100%;
+							left: 0;
+							padding: 10px;
+							@include border-radius(50%);
+						}
+					}
+					h4{
+						font-size: 14px;
+						color: $grayColor;
+						font-weight: 800;
+						text-transform: uppercase;
+						font-family: $exoType;
+						margin: 20px 0 5px;
+					}
+					span{
+						font-size: 12px;
+						color: $blueColor;
+						font-style: italic;
+						display: block;
+						font-weight: 200;
+					}
+					a{
+						&.button{
+							background: $blueColor;
+							color:$whiteColor;
+							font-weight:300;
+							display: inline-block;
+							@include border-radius(10px);
+							margin: 10px 0;
+							padding: 6px 0;
+							width: 95px;
+							text-align: center;
+							position:relative;
+							cursor: pointer;
+							span{
+								background:url('../images/arrowGoBlue.png');
+								background-size: 20px;
+								width: 20px;
+								height: 20px;
+								opacity: 0;
+								visibility: hidden;
+								margin: 0 10px;
+								position:absolute;
+								left: -25px;
+								@include transition(all, 1s, ease);
+							}
+							&:hover, &:focus, &:active{
+								background:$whiteColor;
+								color:$blueColor;
+								font-weight:500;
+								text-decoration: none;
+								width: 130px;
+								span{
+									opacity: 1;
+									visibility: visible;
+									left: -5px;
+								}
+							}
+				  		}
+					}
+				}
+			}
+			&.active{
+				padding:50px 0;
+				opacity:1;
+				visibility: visible;
+			}
+		}
+	}
+/* Footer Styles ======================================================================== */
+	footer{
+		background:$grayColor;
+		color:$whiteColor;
+		font-family:$exoType;
+		font-size: 12px;
+		text-align: center;
+		padding:50px 30px;
+		a{
+			color:$whiteColor;
+			&:hover, &:focus, &:active{
+				color: darken($whiteColor, 20%);
+				text-decoration: line-through;
+			}
+		}
+	}
+/* End Footer Styles ======================================================================== */
+/* Curriculum Styles ======================================================================== */
+	section{
+		padding:50px 0;
+		text-align: center;
+		.title{
+			@include titleCV();
+			@include border-radius(50%);
+			@include box-shadow(0, 0px, 15px, darken($whiteColor, 50%), inset);
+			i{
+				@include iconsCV();
+				background-position:0 0;
+			}
+			span{
+				font-family: $exoType;
+				font-size: 18px;
+				text-transform: uppercase;
+				display: block;
+				margin-top: 10px;
+				color: #b6ce31;
+				font-weight: 600;
+			}
+		}
+		&.intro{
+			margin-top: 140px;
+			padding:40px 80px 140px;
+			h1{
+				color: $blueColor;
+				font-size: 45px;
+				font-family: $exoType;
+				font-weight: 700;
+				@include transition(all, 2s, ease);
+			}
+			span{
+				font-style: italic;
+				font-size: 12px;
+				@include transition(all, 2s, ease);
+			}
+			p{
+				margin: 40px 0 60px;
+				@include transition(all, 2s, ease);
+			}
+			article{
+				width: 33%;
+				float: left;
+				line-height: 15px;
+				padding-top: 32px;
+				@include transition(all, 2s, ease);
+				&.photo{
+					padding-top: 0;
+				}
+				div{
+					@include circle();
+					@include transition(all, 2s, ease);
+					@include border-radius(50%);
+					@include box-shadow(0, 0, 4px, darken($whiteColor, 50%));
+					position: relative;
+					padding: 10px;
+					img{
+						@include border-radius(50%);
+						width: 100%;
+					}
+				}
+				h4{
+					margin: 0 0 10px;
+					font-weight: 700;
+					font-size: 18px;
+				}
+				h6{
+					margin: 0;
+					font-weight: 700;
+					font-size: 14px;
+				}
+				small{
+					font-weight: 200;
+					font-size: 12px;
+					font-style: italic;
+				}
+				p{
+					margin: 0 0 10px;
+					color: $blueColor;
+					font-weight: 500;
+					font-size: 12px;
+				}
+			}
+		}
+		&.experience{
+			background:#b6ce31;
+			position:relative;
+			padding:140px 0 160px;
+			article{
+				div{
+					float: left;
+					width: 33.33%;
+					padding: 0 40px;
+					@include transition(all, 2s, ease);
+					h4{
+						margin: 0;
+						padding: 0;
+						font-weight: 700;
+						text-transform: uppercase;
+						font-family: $exoType;
+					}
+					small{
+						font-style: italic;
+						letter-spacing: -1px;
+						display: block;
+					}
+					span{
+						font-family: $exoType;
+						color: $blueColor;
+						font-style: italic;
+						font-size: 14px;
+						font-weight: 400;
+					}
+					p{
+						font-size: 13px;
+						font-weight: 200;;
+						margin: 5px 0;
+					}
+				}
+				&.secondRow{
+					margin-top: 40px;
+				}
+			}
+		}
+		&.skills{
+			background:#d2021f;
+			position:relative;
+			padding:140px 0 160px;
+			.title{
+				i{
+					background-position:-70px 0;
+				}
+				span{
+					color: #d2021f;
+				}
+			}
+			article{
+				div{
+					display: inline-block;
+					width: 20%;
+					padding-top:80px;
+					@include transition(all, 2s, ease);
+					span{
+						width: 100px;
+						height: 100px;
+						display: block;
+						background: transparent;
+						border: 8px solid $whiteColor;
+						@include border-radius(50%);
+						margin: 0 auto;
+						i{
+							@include iconsSkills();
+							&.adobe{
+								background-position:-90px 0;
+							}
+							&.joomla{
+								background-position:-180px 0;
+							}
+							&.js{
+								background-position:-270px 0;
+							}
+							&.english{
+								background-position:-360px 0;
+							}
+							&.sharepoint{
+								background-position:-450px 0;
+							}
+							&.xsl{
+								background-position:-540px 0;
+							}
+							&.php{
+								background-position:-630px 0;
+							}
+							&.user{
+								background-position:-720px 0;
+							}
+							&.sketchup{
+								background-position:-798px 0;
+							}
+							&.autocad{
+								background-position:-890px 0;
+							}
+							&.dmax{
+								background-position:-979px 0;
+							}
+							&.revit{
+								background-position:-1069px 0;
+							}
+							&.rhino{
+								background-position:-1158px 0;
+							}
+						}
+					}
+					p{
+						margin: 10px 0;
+						color: $whiteColor;
+						font-weight: 400;
+						text-transform: uppercase;
+						font-size: 13px;
+					}
+					h4{
+						color: $whiteColor;
+						font-weight: 700;
+						text-transform: uppercase;
+						font-size:30px;
+						font-family: $exoType;
+						margin: 0;
+					}
+				}
+			}
+		}
+		&.contact{
+			background:#ff6c00;
+			position:relative;
+			padding:140px 0 160px;
+			.title{
+				i{
+					background-position:-140px 0;
+				}
+				span{
+					color: #ff6c00;
+				}
+			}
+			h1{
+				font-family: $exoType;
+				color: $whiteColor;
+				font-weight: 800;
+				font-size: 60px;
+				margin: 30px 0 140px;
+				@include transition(all, 2s, ease);
+			}
+			p{
+				color: $whiteColor;
+				font-size: 14px;
+				@include transition(all, 2s, ease);
+			}
+			a{
+				color: $whiteColor;
+				&:hover, &:focus, &:active{
+					color: darken($whiteColor, 20%);
+					text-decoration: line-through;
+				}
+			}
+			ul{
+				margin:100px 0;
+				padding:0;
+				li{
+					list-style: none;
+					display: inline-block;
+					@include transition(all, 2s, ease);
+					padding: 0 20px;
+					a{
+						i{
+							@include iconsContact();
+							&.linkedin{
+								background-position:-124px 0;
+							}
+							&.facebook{
+								background-position:-249px 0;
+							}
+							&.youtube{
+								background-position:-372px 0;
+							}
+							&.wordpress{
+								background-position:-497px 0;
+							}
+						}
+						&:hover, &:focus, &:active{
+							i{
+								background-position:0 -86px;
+								&.linkedin{
+									background-position:-124px -86px;
+								}
+								&.facebook{
+									background-position:-249px -86px;
+								}
+								&.youtube{
+									background-position:-372px -86px;
+								}
+								&.wordpress{
+									background-position:-497px -86px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+/* End Footer Styles ======================================================================== */
+/* Portafolio Styles ======================================================================== */
+	section{
+		&.portafolio{
+			position:relative;
+			ul{
+				margin: 100px 0 0 0;
+				padding: 0;
+				list-style: none;
+				display: block;
+				text-align: center;
+				width: 100%;
+				@include transition(all,1s, ease);
+				li{
+					width: 220px;
+					height: 220px;
+					display: inline-block;
+					margin: 20px;
+					article{
+						width: 100%;
+						height: 100%;
+						@include border-radius(50%);
+						position: relative;
+						cursor: default;
+						@include transition(all, 0.4s, ease-in-out);
+						box-shadow: inset 0 0 0 0 rgba(35, 122, 176, 0.4), inset 0 0 0 16px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.1);
+						img{
+							position: absolute;
+							width: 100%;
+							@include border-radius(50%);
+							left: 0;
+							z-index: -1;
+						}
+						div{
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							@include border-radius(50%);
+							opacity: 0;
+							@include transition(all, 0.4s, ease-in-out);
+							-webkit-transform: scale(0);
+							-moz-transform: scale(0);
+							-o-transform: scale(0);
+							-ms-transform: scale(0);
+							transform: scale(0);
+							-webkit-backface-visibility: hidden; /*for a smooth font */
+							h3 {
+								color: $whiteColor;
+								text-transform: uppercase;
+								position: relative;
+								letter-spacing: 2px;
+								font-size: 22px;
+								margin: 0 30px;
+								padding: 65px 0 0 0;
+								height: 110px;
+								text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
+							}
+							p {
+								color: #fff;
+								padding: 10px 5px;
+								font-style: italic;
+								margin: 0 30px;
+								font-size: 12px;
+								border-top: 1px solid rgba(255,255,255,0.5);
+								a {
+									cursor: pointer;
+									display: block;
+									color: $whiteColor;
+									font-style: normal;
+									font-weight: 700;
+									text-transform: uppercase;
+									font-size: 9px;
+									letter-spacing: 1px;
+									padding-top: 4px;
+									&:hover {
+										font-size: 12px;
+									}
+
+								}
+							}
+						}
+						&:hover, &:focus, &:active{
+							box-shadow: 
+							inset 0 0 0 110px rgba(35, 122, 176, 0.8),
+							inset 0 0 0 16px rgba(255,255,255,0.8),
+							0 1px 2px rgba(0,0,0,0.1);
+							div{
+								opacity: 1;
+								-webkit-transform: scale(1);
+								-moz-transform: scale(1);
+								-o-transform: scale(1);
+								-ms-transform: scale(1);
+								transform: scale(1);	
+								-webkit-backface-visibility: visible; /*for a smooth font */
+							}
+						}
+					}
+				}
+			}
+			.data{
+				margin-top:40px;
+				@include transition(all, 1s, ease);
+				article{
+					margin: 0;
+					padding:0 100px;
+					@include transition(all, 1s, ease);
+					img{
+						@include border-radius(50%);
+						width: 30%;
+						margin-bottom:30px;
+					}
+					h4{
+						margin: 0 0 30px;
+						font-family: $exoType;
+						font-weight: 600;
+					}
+					span{
+						color: $blueColor;
+						font-size: 12px;
+						display: block;
+						margin-bottom: 20px;
+					}
+					.carousel{
+						width: 90%;
+						margin: 0 auto;
+						img{
+							@include border-radius(0%);
+							width: 70%;
+							margin:0 auto;
+						}
+						.carousel-indicators{
+							li{
+								@include border-radius(50%);
+								width: 30px;
+								height: 30px;
+							}
+							.active{
+							}
+						}
+					}
+				}
+				&.port2{
+					article{
+						img{
+							@include border-radius(0%);
+							width:70%;
+							margin:0 auto;
+						}
+					}
+				}
+				a{
+					&.button{
+						position: relative;
+						display: inline-block;
+						margin: 20px;
+						outline: none;
+						color: $blueColor;
+						text-decoration: none;
+						text-transform: uppercase;
+						font-weight: 600;
+						text-shadow: 0 0 1px rgba(255,255,255,0.3);
+						font-size: 14px;
+						cursor: pointer;
+						@include transition(all, 1s, ease);
+						&:before, &:after{
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							width: 100px;
+							height: 100px;
+							border: 2px solid rgba(0,0,0,0.1);
+							border-radius: 50%;
+							content: '';
+							opacity: 0;
+							-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+							-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+							transition: transform 0.3s, opacity 0.3s;
+							-webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+							-moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+							transform: translateX(-50%) translateY(-50%) scale(0.2);
+						}
+						&:after{
+							width: 90px;
+							height: 90px;
+							border-width: 6px;
+							-webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+							-moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+							transform: translateX(-50%) translateY(-50%) scale(0.8);
+						}
+						&:hover, &:focus, &:active{
+							color:$grayColor;
+							&:after, &:before{
+								opacity: 1;
+								-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+								-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+								transform: translateX(-50%) translateY(-50%) scale(1);
+							}
+						}
+			  		}
+			  		&.back{
+			  			position:absolute;
+			  			left: 20px;
+			  			top: 130px;
+			  		}
+				}
+			}
+			&.monse{
+				ul {
+					li {
+						article {
+							div {
+								h3{
+									font-size: 10px;
+									height: auto;
+								}
+								span{
+									text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
+									color: $whiteColor;
+									font-size: 9px;
+									text-transform: uppercase;
+									margin:5px 20px 10px;
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+/* End Portafolio Styles ======================================================================== */
+/* Media Styles ======================================================================== */
+	@media (max-width: $laptop) {
+		body{
+			nav{
+		  		&.custom{
+		  			.navbar-brand{
+		  				padding: 16px 25px 0;
+		  				img{
+		  					width: 150px;
+		  				}
+		  			}
+		  			.navbar-nav{
+		  				li{
+		  					a{
+								padding: 0 30px;
+		  					}
+		  				}
+		  			}
+		  		}
+		  	}
+		  	.loader {
+			 	margin: 280px auto;
+		 	}
+		}
+		.content{
+			p{
+				padding:0 40px;
+			}
+			article{
+				dl{
+					padding:0 50px;
+					dt{
+					}
+				}
+			}
+		}
+		section{
+			&.intro{
+				padding:40px 40px 140px;
+				h1{
+					font-size: 40px;
+				}
+				article{
+					width: 50%;
+					padding-top: 32px;
+					&.photo{
+						width: 100%;
+					}
+				}
+			}
+			&.experience{
+				article{
+					div{
+						padding: 0 20px;
+					}
+				}
+			}
+			&.portafolio{
+				.data {
+					article{
+						margin: 30px 0 0;
+    					padding: 0 50px;
+    					img{
+    						width: 40%;
+    					}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: $ipad) {
+		body{
+			nav{
+		  		&.custom{
+		  			.navbar-brand{
+		  				padding: 16px 25px 0;
+		  			}
+		  			.navbar-nav{
+		  				margin: 0;
+		  				background:$blueColor;
+		  				li{
+		  					a{
+		  						line-height: 40px;
+							    padding: 0 0 0 20px;
+							    width: 180px;
+							    &:focus, &:hover, &:active{
+			  						background:$whiteColor;
+		  							color: $blueColor;
+			  					}
+		  					}
+		  					&.active{
+		  						a{
+		  							background:$whiteColor;
+			  						color: $blueColor;
+			  						&:focus, &:hover, &:active{
+				  						background:$whiteColor;
+			  							color: $blueColor;
+				  					}
+			  					}
+		  					}
+		  				}
+		  			}
+		  			.navbar-toggle{
+		  				margin: 0;
+		  				padding:0;
+		  				border:none;
+		  				background:transparent;
+		  				color: $whiteColor;
+	  				  	font-size: 18px;
+					    line-height: 75px;
+					    margin: 0;
+					    padding: 0;
+					    width: 180px;
+					    text-transform: uppercase;
+					    font-family: $exoType;
+					    font-weight: 200;
+					    @include transition(all, 1s, ease);
+		  				&:focus, &:hover, &:active{
+				  			background:$blueColor;
+				  		}
+		  			}
+		  		}
+		  	}
+		  	.loader {
+			 	margin: 250px auto;
+		 	}
+		}
+		.slider{
+			h1{
+				font-size: 30px;
+			}
+		}
+		.content{
+			p{
+				padding:0 30px;
+			}
+			article{
+				dl{
+					padding:0 20px;
+					dt{
+						float: none;
+						width: 100%;
+						margin-bottom: 20px;
+						&:last-child{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+		section{
+			&.intro{
+				padding:40px 20px 140px;
+				h1{
+					font-size: 25px;
+				}
+				article{
+					width: 100%;
+					float: none;
+				}
+			}
+			&.experience{
+				article{
+					div{
+						width: 100%;
+						float: none;
+						margin-bottom: 20px;
+					}
+					&.secondRow{
+						margin-top: 0;
+					}
+				}
+			}
+			&.skills{
+				article{
+					div{
+						padding-top:40px;
+						width: 33.33%;
+						&:last-child{
+							width: 100%;
+						}
+					}
+				}
+			}
+			&.contact{
+				padding:140px 0 100px;
+				h1{
+					font-size: 40px;
+					margin-bottom: 100px;
+				}
+				p{
+					padding:20px;
+				}
+			}
+			&.portafolio{
+				.data {
+					article{
+    					padding: 0 30px;
+    					img{
+    						width: 50%;
+    					}
+    					.carousel {
+						    margin: 10px auto 0;
+						    width: 100%;
+						    img{
+						    	width: 90%;
+						    }
+						}
+					}
+					a{
+						&.back{
+				  			position:relative;
+				  			left: 0;
+				  			top: 10px;
+				  		}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: $mobile) {
+		body{
+			nav{
+		  		&.custom{
+		  			.navbar-brand{
+		  				padding: 27px 0 0 25px;
+		  				img{
+		  					width: 80px;
+		  				}
+		  			}
+		  			.navbar-toggle{
+					    width: 100px;
+		  			}
+		  		}
+		  	}
+		  	.loader {
+			 	margin: 150px auto;
+		 	}
+		}
+		.slider{
+			height: 550px;
+			.logo{
+				width: 150px;
+				height: 150px;
+				top: 100px;
+			}
+			h1{
+				font-size: 18px;
+				padding-top:320px;
+			}
+		}
+		.content{
+			padding: 80px 0 10px;
+			font-size: 14px;
+			p{
+				padding: 0 10px;
+			}
+			article{
+				h1{
+					font-size: 25px;
+				}
+				dl{
+					padding:0 10px;
+					dt{
+						div{
+							width: 200px;
+							height: 200px;
+						}
+					}
+				}
+			}
+		}
+		section{
+			&.intro{
+				margin-top: 105px;
+				h1{
+					font-size: 18px;
+				}
+				article{
+					div{
+						width: 200px;
+						height: 200px;
+					}
+				}
+			}
+			&.skills{
+				article{
+					div{
+						padding-top:40px;
+						width: 50%;
+						&:last-child{
+							width: 50%
+						}
+					}
+				}
+			}
+			&.contact{
+				padding:140px 0 100px;
+				h1{
+					font-size: 30px;
+    				margin-bottom: 60px;
+				}
+				p{
+					padding:15px;
+				}
+				ul{
+					margin: 40px 0;
+					li{
+						padding: 20px 20px 0;
+					}
+				}
+			}
+			&.portafolio{
+				.data {
+					article{
+    					padding: 0 20px;
+    					img{
+    						width: 80%;
+    					}
+    					.carousel{
+    						.carousel-indicators{
+    							bottom: -70px;
+    							li{
+    								border: 1px solid $blueColor;
+    								height: 25px;
+    								width: 25px;
+    							}
+    							.active{
+    								background: $blueColor;
+    							}
+    						}
+    					}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: $miniMobile) {
+		.content{
+			article{
+				dl{
+					dt{
+						a{
+							display: block;
+							margin: 10px auto;
+							padding: 10px 0;
+							width: 70%;
+							span{
+								left: -50px;
+							}
+							&:hover, &:focus, &:active{
+								width: 90%;
+								span{
+									left: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		section{
+			&.skills{
+				article{
+					div{
+						padding-top:40px;
+						width: 100%;
+						float: none;
+						&:last-child{
+							width: 100%;
+						}
+					}
+				}
+			}
+			&.contact{
+			}
+			&.portafolio{
+				ul{
+					li{
+						margin: 20px 0;
+						article{
+							div{
+								p{
+									a{
+										font-size: 14px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.data {
+					article{
+    					.carousel{
+    						.carousel-indicators{
+    							li{
+    								height: 18px;
+    								width: 18px;
+    							}
+    						}
+    					}
+					}
+				}
+			}
+		}
+		.slider{
+			h1{
+				font-size: 16px;
+			}
+		}
+	}
+/* End Media Styles ======================================================================== */
+/* Animate Styles ======================================================================== */
+	@-webkit-keyframes bounce {
+	  0%, 100% { -webkit-transform: scale(0.0) }
+	  50% { -webkit-transform: scale(1.0) }
+	}
+
+	@keyframes bounce {
+	  0%, 100% { 
+	    transform: scale(0.0);
+	    -webkit-transform: scale(0.0);
+	  } 50% { 
+	    transform: scale(1.0);
+	    -webkit-transform: scale(1.0);
+	  }
+	}
+/* Media Styles ======================================================================== */
+/* Resume ======================================================================== */
+	body{
+		&.resume{
+			width: 960px;
+			margin:40px auto;
+			overflow: auto;
+			.wrapper{
+				background:$whiteColor;
+				ul{
+					margin: 0;
+					padding:0;
+					li{
+						list-style: none;
+					}
+				}
+				box-shadow: 0px 0px 15px -5px $grayColor;
+				section{
+					width: 60%;
+					padding:25px;
+					display: block;
+					float: left;
+					height: 100%;
+					text-align: left;
+					header{
+						margin:20px 0;
+						h1{
+							text-transform: uppercase;
+							margin:0;
+							font-size: 25px;
+							font-family: $exoType;
+						}
+						img{
+							float: left;
+							margin-right: 10px;
+						}
+						p{
+							font-size: 15px;
+						}
+						&.name{
+							line-height: 10px;
+							margin:0;
+							h1{
+								font-size: 60px;
+								margin-top: 18px;
+								float: left;
+								font-family: $exoType;
+							}
+							span{
+								text-transform: uppercase;
+								color:$blueColor;
+								font-size: 22px;
+								font-family: $exoType;
+							}
+						}
+						&.about{
+							p{
+								font-style: italic;
+							}
+						}
+						&.exp{
+							h1{
+								margin-top: 8px;
+							}
+						}
+					}
+					ul{
+						margin: 0;
+						padding:0;
+						li{
+							margin: 0;
+							padding:0;
+							h1{
+								color: $blueColor;
+								font-size: 16px;
+								margin:0;
+								font-weight: 300;
+								small{
+									font-size: 16px;
+									color: $blueColor;
+									font-style: italic;
+								}
+							}
+							span{
+								font-weight: 700;
+								font-size: 15px;
+								color: $blueColor;
+								font-family: $exoType;
+							}
+							p{
+								font-weight: 300;
+								margin: 0 0 20px;
+							}
+						}
+					}
+					.skills{
+						ul{
+							li{
+								float: left;
+								width: 45%;
+								margin-right: 25px;
+								h1{
+									margin: 0 0 10px;
+									font-size: 12px;
+									display: inline-block;
+									font-family: $exoType;
+								}
+								small{
+									font-family: $exoType;
+									font-size: 12px;
+									float: right;
+								}
+							}
+						}
+					}
+				}
+				aside{
+					width: 38%;
+					background: $blueColor;
+					height: 100%;
+					display: inline-block;
+					padding: 40px 20px 95px;
+					text-align: right;
+					color: $whiteColor;
+					font-size: 18px;
+					font-weight: 200;
+					ul{
+						margin: 0;
+						padding:0;
+					}
+					.me{
+						li{
+							margin-bottom: 2px;
+							img{
+								display: inline-block;
+								margin-left: 12px;
+							}
+							p{
+								display: inline-block;
+							}
+						}
+					}
+					.edu{
+						p{
+							font-weight: 600;
+						}
+					}
+					h2{
+						text-transform: uppercase;
+						font-weight: 700;
+						margin-top: 40px;
+						margin-bottom: 10px;
+						font-family: $exoType;
+					}
+					p{
+						margin:0;
+					}
+					span{
+						display: block;
+						font-size: 14px;
+					}
+					a{
+						color:$whiteColor;
+						font-family: $exoType;
+						font-size: 14px;
+					}
+					.extra{
+						p{
+							font-size: 14px;
+							font-weight: 600;
+						}
+					}
+					.want{
+						li{
+							width: 75%;
+							float: right;
+						}
+						span{
+							font-size: 16px;
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+/* End Curriculum ======================================================================== */

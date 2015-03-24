@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Somos un equipo de profesionistas apasionadas por el diseño y la arquitectura. Estamos convencidas de que el amor por lo que hacemos y nuestras habilidades nos permiten satisfacer las necesidades del cliente. Creemos firmemente en la idea de que el trabajo vale más que mil palabras.">
+    <meta name="author" content="Liz Villegas">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <title>Mil 57 - Inicio</title>
+
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="loader">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+    </div>
+    <div class="wrapper" style="display:none;">
+      <div class="slider">
+        <div class="logo">
+          <a href="http://mil57.mx/"><img src="images/logoInicio.png" alt="Mil 57"></a>
+        </div>
+        <h1>Desarrollando ideas para<br> transformar tu entorno</h1>
+      </div>
+      
+      <div class="content">
+        <p>
+          Somos un equipo de profesionistas apasionadas por el diseño y la arquitectura. Estamos convencidas de que el amor por lo que hacemos y nuestras habilidades nos permiten satisfacer las necesidades del cliente. Creemos firmemente en la idea de que el trabajo vale más que mil palabras.  
+          La planificación y el contacto con el cliente es nuestra mejor arma para que un proyecto salga adelante.<br><br>
+          Puedes conocer más sobre nuestro trabajo dando click en el portafolio.
+        <article class="clearfix">
+          <h1>El Equipo</h1>
+          <dl>
+            <dt>
+              <div>
+                <img src="images/lizImages.jpg" alt="Liz Villegas">
+              </div>
+              <h4>Ninja Dev</h4>
+              <span class="clearfix">"Say hello to my little. .. oh sorry to my works."</span>
+              <a href="/LizPortafolio" class="button"><span></span>Portafolio</a>
+              <a href="/LizCurriculum" class="button"><span></span>Curriculum</a>
+            </dt>
+            <dt>
+              <div>
+                <img src="images/deyaImage.jpg" alt="Deyanira Alcalá">
+              </div>
+              <h4>Arch</h4>
+              <span class="clearfix">"Gangster Architect... La cosa nostra."</span>
+              <a href="/DeyaPortafolio" class="button"><span></span>Portafolio</a>
+              <a href="/DeyaCurriculum" class="button"><span></span>Curriculum</a>
+            </dt>
+          </dl>
+        </article>
+      </div>
+      <footer>
+        Copyright © Todos los Derechos Reservados | Sitio realizado por <a href="http://mil57.mx/">mil57.mx</a>
+      </footer>
+    </div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/general_scripts.js"></script>
+    <script type="text/javascript">
+      $(window).bind('load', function() {
+        $('.loader').hide();
+        $('.wrapper').fadeIn('slow');
+      });
+      $(window).scroll(function () {
+          $('.content').toggleClass('active', $(this).scrollTop() > 400);
+          $('.logo').toggleClass('active', $(this).scrollTop() > 400);
+          $('article').toggleClass('active', $(this).scrollTop() > 550);
+      });
+    </script>
+  </body>
+</html>

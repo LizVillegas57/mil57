@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="CV">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="I was born on July 30, 1988 in the city of Monterrey Nuevo Leon, Mexico. I decided to study Graphic Design because it's a great way to communicate and transmit.">
+    <meta name="author" content="Liz Villegas">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<title>Resume Liz Villegas</title>
+	<link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body ng-controller="TitlesController as common" class="resume">
+
+	<div class="wrapper clearfix">
+		<section>
+			<header class="clearfix name">
+				<img ng-src="{{common.usual.logo}}"/>
+				<h1>{{common.usual.logoName}}</h1>
+				<span>{{common.usual.position}}</span>
+			</header>
+			<header class="clearfix about">
+				<h1>{{common.usual.first}}</h1>
+				<p>{{common.usual.firstAbout}}</p>
+			</header>
+			<header class="clearfix exp">
+				<img ng-src="{{common.usual.imageSecond}}"/>
+				<h1>{{common.usual.second}}</h1>
+			</header>
+			<div ng-controller="ExperienceController as works" class="clearfix">
+				<ul>
+					<li ng-repeat="experience in works.experiences">
+						<h1>{{experience.workName}} <small>{{experience.date}}</small></h1>
+						<span>{{experience.position}}</span>
+						<p>{{experience.description}}</p>
+					</li>
+				</ul>
+			</div>
+			<header class="clearfix exp">
+				<img ng-src="{{common.usual.imageThird}}"/>
+				<h1>{{common.usual.third}}</h1>
+			</header>
+			<div ng-controller="SkillsController as list" class="skills clearfix">
+				<ul>
+					<li ng-repeat="sk in list.skills">
+						<h1>{{sk.skill}}</h1>
+                      	<small>{{sk.percentage}}</small>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<aside>
+			<ul class="me">
+				<li>
+					<a href="mailto:liz.villegas@mil57.mx">{{common.usual.mail}}</a>
+					<img ng-src="{{common.usual.mailImage}}"/>
+				</li>
+				<li>
+					<p>{{common.usual.phone}}</p>
+					<img ng-src="{{common.usual.phoneImage}}"/>
+				</li>
+				<li>
+					<a href="http://mil57.mx/index_en" target="_blank">{{common.usual.website}}</a>
+				</li>
+			</ul>
+			<h2>{{common.usual.education}}</h2>
+			<div ng-controller="EducationController as edu" class="clearfix edu">
+				<ul>
+					<li ng-repeat="educations in edu.education">
+						<p>{{educations.title}}</p>
+						<span>{{educations.extraInfo}}</span>
+						<span>{{educations.school}}</span>
+						<span>{{educations.city}}</span>
+					</li>
+				</ul>
+			</div>
+			<h2>{{common.usual.objective}}</h2>
+			<div>
+				<ul>
+					<li>
+						<span>{{common.usual.objectiveInfo}}</span>
+					</li>
+				</ul>
+			</div>
+			<h2>{{common.usual.interest}}</h2>
+			<div>
+				<ul>
+					<li>
+						<span>{{common.usual.interestInfo}}</span>
+					</li>
+				</ul>
+			</div>
+			<h2>{{common.usual.extracurricular}}</h2>
+			<small>{{common.usual.extracurricularInfo}}</small>
+			<div ng-controller="ExtracurricularController as ext" class="clearfix extra">
+				<ul>
+					<li ng-repeat="extras in ext.extra">
+						<p>{{extras.title}}</p>
+						<span>{{extras.place}}</span>
+					</li>
+				</ul>
+			</div>
+			<h2>{{common.usual.want}}</h2>
+			<div class="want">
+				<ul>
+					<li>
+						<span>{{common.usual.wantInfo}} <a href="http://mil57.mx/index_en" target="_blank">{{common.usual.website}}</a></span>
+						<span>{{common.usual.wantInfo2}}</span>
+					</li>
+				</ul>
+			</div>
+		</aside>
+	</div>
+	<script type="text/javascript" src="../angular/angular.min.js"></script>
+  	<script type="text/javascript" src="../angular/app.js"></script>
+</body>
+</html>
