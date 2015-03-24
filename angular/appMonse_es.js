@@ -58,18 +58,18 @@
 			workName: 'Mil57',
 			date: '(Enero 2013 - Actual)',
 			position: 'Diseñadora',
-			description: 'Desarrollar y hacer realidad las ideas de los clientes a través del diseño gráfico y arquitectónico. Realizar diseños de logotipo, renders, planos arquitectónicos, criterios instalaciones y branding ',
+			description: 'Desarrollar y hacer realidad las ideas de los clientes a través del diseño gráfico y arquitectónico. Realizar diseños de logotipo, renders, planos arquitectónicos y branding.',
 		},
 		{
 			workName: 'Anteproyecto para albergue sustentable "Comunidad Ecológica Izcuintle"',
 			date: '(Julio 2014)',
 			position: 'Arquitecto Jr. (Prácticas)',
-			description: 'Diseño arquitectónico preliminar, diseño de folletos para su presentación a los donantes, la propuesta de estrategias de sostenibilidad',
+			description: 'Anteproyecto arquitectónico, diseño de brochures para presentación a donantes y propuesta de estrategias de sustentabilidad.',
 		},
 		{
 			workName: 'MedicIN',
 			date: '(Mayo 2014)',
-			position: 'Diseñadora Gráfica',
+			position: 'Diseñadora Gráfica (Freelance)',
 			description: 'Estrategias de identidad corporativa (logotipos / tarjetas de visita / folletos) del plan de negocio y de marketing.',
 		}
 	]
