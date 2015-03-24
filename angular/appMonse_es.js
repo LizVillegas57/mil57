@@ -111,7 +111,7 @@
 		{
 			title: 'Arquitectura',
 			extraInfo: '2009/2014',
-			school: 'Intstituto Tecnológico y de Estudios Superiores de Monterrey. (CEM)',
+			school: 'Instituto Tecnológico y de Estudios Superiores de Monterrey. (CEM)',
 			city: 'Distrito Federal, México.',
 		},
 		{
@@ -127,7 +127,7 @@
 			place: 'Temporada 2012',
 		},
 		{
-			title: 'Miembro del equipo representativo del fútbol del Intstituto Tecnológico y de Estudios Superiores de Monterrey. (CEM)',
+			title: 'Miembro del equipo representativo de fútbol del Instituto Tecnológico y de Estudios Superiores de Monterrey. (CEM)',
 			place: '(2005 - 2007) & (2010 – 2011).',
 		}
 	]
