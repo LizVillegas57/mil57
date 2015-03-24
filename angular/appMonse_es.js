@@ -52,7 +52,7 @@
 			workName: 'Constructora Río Tiber',
 			date: '(Noviembre 2014 - Actual)',
 			position: 'Arquitecto Jr.',
-			description: 'Actualmente estoy trabajando en una empresa constructora dedicada a diferentes industrias, incluyendo el diseño de interiores, arquitectura y construcción de hoteles y casas alrededor de la República Mexicana.',
+			description: 'Dibujante / Proyectista / Renderista - Dibujo y proyección de planos arquitectónicos y de instalaciones, realización de renders y modelos 3D. Preparación de proyectos para presentación a clientes.',
 		},
 		{
 			workName: 'Mil57',
@@ -70,7 +70,7 @@
 			workName: 'MedicIN',
 			date: '(Mayo 2014)',
 			position: 'Diseñadora Gráfica (Freelance)',
-			description: 'Estrategias de identidad corporativa (logotipos / tarjetas de visita / folletos) del plan de negocio y de marketing.',
+			description: 'Realización de identidad corporativa (logotipos / tarjetas de presentación / folletos).',
 		}
 	]
 	var listSkills = [
